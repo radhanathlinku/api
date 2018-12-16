@@ -13,6 +13,7 @@ mongoose.Promise = global.Promise;//mongoose.promise is depricated
 
 
 app.use(bodyParser.json());//above because it will get req first to give json data
+
 /*app.use((error, request, response, next) => {
   if (error !== null) {
     return response.json({ 'invalid': 'json' });
@@ -23,6 +24,11 @@ app.use(bodyParser.json());//above because it will get req first to give json da
 //initialize routes
 
 app.use('/api',require('./routes/api'));//here i access routes directly
+
+//error handling middleware
+app.use(function(err,req,res,next){
+  console.log(err);
+});
 
 //handling requests
 /*

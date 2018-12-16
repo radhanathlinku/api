@@ -5,10 +5,10 @@ const Schema = mongoose.Schema;//variable to store schema class
 const NinjaSchema = new Schema({
     name: {
         type:String,
-        required: (true,'Name field is required')
+        required: (true,'Name field is required'),
     },
     rank: {
-        type:String
+        type:String,
     },
     available: {
         type: Boolean,
