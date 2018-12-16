@@ -4,7 +4,10 @@ const Ninja = require('../models/ninja');
 
 //get a list of ninjas from the db
 router.get('/ninjas',function(req,res,next){
-    res.send({type:'GET'});
+    Ninja.find({}).then(function(ninjas){  //find all ninjas
+        res.send(ninjas); //if we pass find({"name":"radhanath"}),shows radhanath only
+        
+    });
 });
 //add a new ninja to the db
 router.post('/ninjas',function(req,res,next){
